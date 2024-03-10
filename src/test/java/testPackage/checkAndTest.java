@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class checkAndTest {
     /**
      * Navigate to <a href="https://www.saucedemo.com/v1/index.html">SauceDemo</a>
-     * login as standard_user
+     * login as standard_user(done)
      * assert that there are 6 items on the products list page
      * add the first and last items to the cart
      * navigate to the cart and check that both items are listed
