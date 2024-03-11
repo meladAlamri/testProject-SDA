@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import org.testng.asserts.SoftAssert;
 
 
 public class BasicGoogleTest extends Tests{
@@ -33,7 +33,12 @@ public class BasicGoogleTest extends Tests{
     public  void logoGoogleExist(){
         bot.navigate("https://www.google.com/");
         By googleImgLoge = By.cssSelector("img[alt='Google']");
-        Assert.assertTrue(driver.findElement(googleImgLoge).isDisplayed());
+        //Assert.assertTrue(driver.findElement(googleImgLoge).isDisplayed());
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertFalse(driver.findElement(googleImgLoge).isDisplayed(),"First field");
+        softAssert.assertTrue(driver.findElement(googleImgLoge).isDisplayed(), "Second field");
+        softAssert.assertFalse(driver.findElement(googleImgLoge).isDisplayed(), "Tried field");
+        softAssert.assertAll();
 
     }
 
