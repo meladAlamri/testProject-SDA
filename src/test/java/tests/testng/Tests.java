@@ -20,15 +20,15 @@ public class Tests {
 
     protected WebDriver driver;
     protected Wait<WebDriver> wait;
-    public static Logger logger;
+    protected static Logger logger;
 
-    public ActionBot bot;
+    protected ActionBot bot;
 
     //   = LogManager.getLogger(Tests.class.getName());
     @BeforeClass
     public static void beforeAll() {
         Configurator.initialize(null, "src/main/resources/properties/log4j2.properties");
-        logger = LogManager.getLogger(junit.Tests.class.getName());
+        logger = LogManager.getLogger(Tests.class.getName());
     }
 
 

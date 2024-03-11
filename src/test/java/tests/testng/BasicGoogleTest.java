@@ -11,7 +11,7 @@ public class BasicGoogleTest extends Tests{
     /**
      * Breakout task: 40 minutes
      * 1. recreate the base test class for junit with testng (done)
-     * 2. copy the actionsbot to your project under `src/main/java/engine` (done)
+     * 2. copy the actionsBot to your project under `src/main/java/engine` (done)
      * 3. create a new tests.testng (done)
      * 4. create a new class (done)
      * 5. do a quick google search and assert that result stats is not empty using testng (done)
