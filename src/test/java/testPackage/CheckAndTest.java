@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class checkAndTest {
+public class CheckAndTest {
     /**
      * Navigate to <a href="https://www.saucedemo.com/v1/index.html">SauceDemo</a>
      * login as standard_user(done)
