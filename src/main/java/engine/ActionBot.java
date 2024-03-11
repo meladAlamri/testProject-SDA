@@ -27,7 +27,7 @@ public class ActionBot {
     }
 
     public void type(By locator, CharSequence text) {
-        logger.info("Typing: " + text + "info: " + locator);
+        logger.info("Typing: " + text + " info: " + locator);
         wait.until(f -> {
             driver.findElement(locator).clear();
             driver.findElement(locator).sendKeys(text);

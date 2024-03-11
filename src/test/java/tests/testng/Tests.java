@@ -1,4 +1,4 @@
-package testng;
+package tests.testng;
 
 import engine.ActionBot;
 import org.apache.logging.log4j.LogManager;
