@@ -2,6 +2,7 @@ package tests.testng;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -23,8 +24,16 @@ public class BasicGoogleTest extends Tests{
         By searchInput = By.id("APjFqb");
         bot.type(searchInput,"Selenium WebDriver"+ Keys.RETURN);
         By resultSearchLabel = By.id("result-stats");
-        assert !("".equals(driver.findElement(resultSearchLabel).getText())) : "Exacted : result stats is not empty using testng";
+        //assert !("".equals(driver.findElement(resultSearchLabel).getText())) : "Exacted : result stats is not empty using testng";
+        Assert.assertNotEquals("",driver.findElement(resultSearchLabel).getText());
 
+    }
+
+    @Test(dependsOnMethods = {"quickGoogleSearch"})
+    public  void logoGoogleExist(){
+        bot.navigate("https://www.google.com/");
+        By googleImgLoge = By.cssSelector("img[alt='Google']");
+        Assert.assertTrue(driver.findElement(googleImgLoge).isDisplayed());
 
     }
 
