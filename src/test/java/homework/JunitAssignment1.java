@@ -15,7 +15,7 @@ public class JunitAssignment1 extends JunitTestBase {
  * <br> Go to the bottom of the page and click the book, name"jQuery in Action" (done)
  * */
     @Test
-    public void assignmentTestNG1(){
+    public void junitAssignment1(){
 
         //Go to URL: https://api.jquery.com/dblclick/
         bot.navigate("https://api.jquery.com/dblclick/");
