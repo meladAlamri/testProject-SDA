@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
-public class Tests {
+public class TestNGTestBase {
 
     protected WebDriver driver;
     protected Wait<WebDriver> wait;
@@ -27,7 +27,7 @@ public class Tests {
     @BeforeClass
     public static void beforeAll() {
         Configurator.initialize(null, "src/main/resources/properties/log4j2.properties");
-        logger = LogManager.getLogger(Tests.class.getName());
+        logger = LogManager.getLogger(TestNGTestBase.class.getName());
     }
 
 
