@@ -1,14 +1,13 @@
 package homework;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.locators.RelativeLocator;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
-public class AssignmentTestNG1 extends Tests{
+public class JunitAssignment1 extends JunitTestBase {
 /**
  * Go to URL: <a href="https://api.jquery.com/dblclick/">api.jquery</a> (done)
  * <br> Double click on the blue square at the bottom of the page and then write the changed color.(done)
@@ -40,7 +39,7 @@ public class AssignmentTestNG1 extends Tests{
         //Go to the bottom of the page and click the book, name"jQuery in Action"
         By bookLecater = By.xpath("//img[contains(@alt,'jQuery in Action')]");
         bot.click(bookLecater);
-        Assert.assertEquals("https://www.manning.com/books/jquery-in-action-third-edition",driver.getCurrentUrl());
+        Assertions.assertEquals("https://www.manning.com/books/jquery-in-action-third-edition",driver.getCurrentUrl());
 
 
     }
