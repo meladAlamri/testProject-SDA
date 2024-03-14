@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class SoftAssertion extends Tests{
+public class SoftAssertionTests extends Tests{
     /**
      * Breakout session: 30 minutes
      * navigate to <a href="https://practicetestautomation.com/practice-test-login/">practice test</a> (done)
