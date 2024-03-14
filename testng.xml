@@ -5,43 +5,48 @@ Create a testng.xml file (done)
 run both test classes you already created in one test inside one suite (done)
 give the suit a name, give the test a name (done)
 pass the search query as a parameter from the testng.xml file (optional: read it from the testData.json file)(done)
+..........
+Breakout task: 40 minutes (or till everyone finishes, whichever comes first)
+- cross browser execution (chrome, edge, firefox, safari) (done)
+- parallel execution (tests level) (done)
+-> configure your testng.xml file, and modify your test base setup (done)
 -->
 
-<suite name="Demo Suite" verbose="1" parallel="tests">
+<suite name="Demo Suite" verbose="1" parallel="tests" thread-count="4">
     <test name="Chrome Test">
         <parameter name="option" value="Chrome"/>
         <classes>
-            <class name="tests.testng.BasicGoogleTest">
+            <class name="tests.testng.BasicGoogleTests">
                 <methods>
                    <parameter name="search-query" value="Clarusway"/>
                     <exclude name="logoGoogleExist"/>
                 </methods>
             </class>
-            <class name="tests.testng.SoftAssertion"/>
+            <class name="tests.testng.SoftAssertionTests"/>
         </classes>
     </test>
     <test name="Firefox Test">
         <parameter name="option" value="Firefox"/>
         <classes>
-            <class name="tests.testng.BasicGoogleTest">
+            <class name="tests.testng.BasicGoogleTests">
                 <methods>
                     <parameter name="search-query" value="Clarusway"/>
                     <exclude name="logoGoogleExist"/>
                 </methods>
             </class>
-            <class name="tests.testng.SoftAssertion"/>
+            <class name="tests.testng.SoftAssertionTests"/>
         </classes>
     </test>
     <test name="Edge Test">
         <parameter name="option" value="Edge"/>
         <classes>
-            <class name="tests.testng.BasicGoogleTest">
+            <class name="tests.testng.BasicGoogleTests">
                 <methods>
                     <parameter name="search-query" value="Clarusway"/>
                     <exclude name="logoGoogleExist"/>
                 </methods>
             </class>
-            <class name="tests.testng.SoftAssertion"/>
+            <class name="tests.testng.SoftAssertionTests"/>
         </classes>
     </test>
 </suite>
