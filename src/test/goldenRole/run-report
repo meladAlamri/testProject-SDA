@@ -1,0 +1,9 @@
+Configure system environment variables: JAVA_HOME and path (done)
+Install Node.js and NPM (done)
+Go to the root directory of the project for which you want to use Allure Report. Run this command:
+{npm install --save-dev allure-commandline}(done but reused)
+execute {mvn verify} to run your test(done but reused)
+execute {npx allure-commandline serve} to open the report (done but reused)
+press ctrl+c to close the temp server once you're done (done but reused)
+execute {npx allure-commandline generate --single-file allure-results} to generate a single html file for your allure report done but reused)
+
