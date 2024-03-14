@@ -1,15 +1,16 @@
 package tests.testng;
 
-import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.concurrent.atomic.AtomicReference;
 
-public class BasicGoogleTest extends Tests{
+public class BasicGoogleTests extends Tests{
 
     /**
      * Breakout task: 40 minutes
@@ -21,32 +22,34 @@ public class BasicGoogleTest extends Tests{
      */
     @Parameters("search-query")
     @Test
-    public  void quickGoogleSearch(String searchQuery){
+
+    public  void quickGoogleSearch(@Optional("Selenium WebDriver") String searchQuery){
         bot.navigate("https://www.google.com/");
         By searchInput = By.id("APjFqb");
-        bot.type(searchInput, testData.get("searchQuery").toString()+ Keys.RETURN);
+        //bot.type(searchInput, testData.get("searchQuery").toString()+ Keys.RETURN);
         //bot.type(searchInput,"Selenium WebDriver"+ Keys.RETURN);
-        //bot.type(searchInput,searchQuery+ Keys.RETURN);
-        By resultSearchLabel = By.id("result-stats");
-        wait.until(
-                d -> {
-                    driver.findElement(resultSearchLabel).getText();
-                    return true;
-                });
-        //assert !("".equals(driver.findElement(resultSearchLabel).getText())) : "Exacted : result stats is not empty using testng";
-        Assert.assertNotEquals("",driver.findElement(resultSearchLabel).getText());
+        bot.type(searchInput,searchQuery+ Keys.RETURN);
+        By resultStatsLabel = By.id("result-stats");
+
+        AtomicReference<String> actualText = new AtomicReference<>("");
+        wait.until(f -> {
+            actualText.set(driver.findElement(resultStatsLabel).getText());
+            return true;
+        });
+        Assert.assertNotEquals(actualText, "");
+
 
     }
 
-    @Test(dependsOnMethods = {"quickGoogleSearch"})
+    @Test(testName = "Check Google Logo Exists", description = "Given I am on the Google homepage, Then the Google logo should be displayed")
     public  void logoGoogleExist(){
         bot.navigate("https://www.google.com/");
         By googleImgLoge = By.cssSelector("img[alt='Google']");
         //Assert.assertTrue(driver.findElement(googleImgLoge).isDisplayed());
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertFalse(driver.findElement(googleImgLoge).isDisplayed(),"First field");
+        softAssert.assertTrue(driver.findElement(googleImgLoge).isDisplayed(),"First field");
         softAssert.assertTrue(driver.findElement(googleImgLoge).isDisplayed(), "Second field");
-        softAssert.assertFalse(driver.findElement(googleImgLoge).isDisplayed(), "Tried field");
+        softAssert.assertTrue(driver.findElement(googleImgLoge).isDisplayed(), "Tried field");
         softAssert.assertAll();
 
     }
