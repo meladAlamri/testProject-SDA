@@ -15,10 +15,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -45,12 +42,12 @@ public class Tests {
 
     @Parameters("option")
     @BeforeMethod
-    public void beforeEach(String option) {
+    public void beforeEach(@Optional("Chrome") String option) {
         logger.info("Opening " + option + " Browser");
         switch (option) {
             case "Chrome" -> driver = new ChromeDriver();
             case "Edge" -> driver = new EdgeDriver();
-            default -> driver = new FirefoxDriver();
+            case "Firefox" -> driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
 
