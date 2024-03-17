@@ -1,10 +1,13 @@
 package tests.testng;
 
+import engine.CustomListener;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+@Listeners(CustomListener.class)
 public class SoftAssertionTests extends Tests{
     /**
      * Breakout session: 30 minutes

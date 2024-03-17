@@ -1,8 +1,10 @@
 package tests.testng;
 
+import engine.CustomListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -10,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.atomic.AtomicReference;
 
+@Listeners(CustomListener.class)
 public class BasicGoogleTests extends Tests{
 
     /**
@@ -22,7 +25,6 @@ public class BasicGoogleTests extends Tests{
      */
     @Parameters("search-query")
     @Test
-
     public  void quickGoogleSearch(@Optional("Selenium WebDriver") String searchQuery){
         bot.navigate("https://www.google.com/");
         By searchInput = By.id("APjFqb");
