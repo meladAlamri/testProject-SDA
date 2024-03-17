@@ -13,6 +13,9 @@ Breakout task: 40 minutes (or till everyone finishes, whichever comes first)
 -->
 
 <suite name="Demo Suite" verbose="1" parallel="tests" thread-count="4">
+    <listeners>
+        <listener class-name="engine.CustomListener"/>
+    </listeners>
     <test name="Chrome Test">
         <parameter name="option" value="Chrome"/>
         <classes>
