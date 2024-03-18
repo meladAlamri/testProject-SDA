@@ -1,0 +1,25 @@
+<!--Doing Cross-Browser Testing.-->
+<suite name="Demo Suite" verbose="1" parallel="tests" thread-count="3">
+    <listeners>
+        <listener class-name="engine.CustomListener"/>
+    </listeners>
+    <test name="Chrome Test">
+        <parameter name="option" value="Chrome"/>
+        <classes>
+            <class name="Exercises.TestNGAssignment5"/>
+        </classes>
+    </test>
+    <test name="Firefox Test">
+        <parameter name="option" value="Firefox"/>
+        <classes>
+
+            <class name="Exercises.TestNGAssignment5"/>
+        </classes>
+    </test>
+    <test name="Edge Test">
+        <parameter name="option" value="Edge"/>
+        <classes>
+            <class name="Exercises.TestNGAssignment5"/>
+        </classes>
+    </test>
+</suite>
