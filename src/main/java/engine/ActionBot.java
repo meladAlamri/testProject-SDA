@@ -8,6 +8,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class ActionBot {
     private final WebDriver driver;
 
@@ -27,6 +29,7 @@ public class ActionBot {
         logger.info("Navigate to: " + url);
         driver.navigate().to(url);
     }
+
     @Step
     public void type(By locator, CharSequence text) {
         logger.info("Typing: " + text + " info: " + locator);
@@ -35,6 +38,16 @@ public class ActionBot {
             driver.findElement(locator).sendKeys(text);
             return true;
         });
+    }
+
+    @Step
+    public String getText(By locator) {
+        AtomicReference<String> actionText = new AtomicReference<>("");
+        wait.until(f -> {
+            actionText.set(driver.findElement(locator).getText());
+            return true;
+        });
+        return actionText.get();
     }
 
     @Step
