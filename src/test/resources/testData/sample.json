@@ -3,5 +3,19 @@
   "SoftAssertionsTestData": {
     "Username": "student",
     "Password": "Password123"
+  },
+  "SauceDomeLoginTestData": {
+    "case1": {
+      "Username": "standard_user",
+      "Password": "secret_sauce"
+    },
+    "case2": {
+      "Username": "locked_out_user",
+      "Password": "secret_sauce"
+    },
+    "case3": {
+      "Username": "problem_user",
+      "Password": "secret_sauce"
+    }
   }
 }
