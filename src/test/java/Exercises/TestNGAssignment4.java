@@ -40,6 +40,8 @@ public class TestNGAssignment4 extends Tests {
         By resultLabelLocator = By.className("control-label");
         Assert.assertTrue(driver.findElement(resultLabelLocator).isDisplayed(), "result Label is not displayed");
 
+        //Using the Search function do it with Data Provider for Mac, iPad and Samsung.
+        /** check DataProviderClass */
 
     }
 }
