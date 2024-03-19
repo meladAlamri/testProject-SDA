@@ -17,5 +17,19 @@
       "Username": "problem_user",
       "Password": "secret_sauce"
     }
+  },
+  "PracticeDomeLoginTestData": {
+    "case1": {
+      "Username": "practice",
+      "Password": "SuperSecretPassword!"
+    },
+    "case2": {
+      "Username": "practice",
+      "Password": "SecretPassword!"
+    },
+    "case3": {
+      "Username": "practice!",
+      "Password": "SuperSecretPassword!"
+    }
   }
 }
