@@ -22,7 +22,7 @@ public class FluentPanPatternPanTests extends Tests{
                 .goTo()
                 .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
                 .readMassage();
-        Assert.assertEquals(actionText,"You logged into a secure area!");
+        Assert.assertEquals(actionText,dataInfo.get("massage"));
     }
     @Test
     public void filedLoginPasswordTest(){
@@ -32,7 +32,7 @@ public class FluentPanPatternPanTests extends Tests{
                 .goTo()
                 .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
                 .readMassage();
-        Assert.assertEquals(actionText,"Your password is invalid!");
+        Assert.assertEquals(actionText,dataInfo.get("massage"));
     }
     @Test
     public void filedLoginUserNameTest(){
@@ -42,6 +42,6 @@ public class FluentPanPatternPanTests extends Tests{
                 .goTo()
                 .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
                 .readMassage();
-        Assert.assertEquals(actionText,"Your username is invalid!");
+        Assert.assertEquals(actionText,dataInfo.get("massage"));
     }
 }
