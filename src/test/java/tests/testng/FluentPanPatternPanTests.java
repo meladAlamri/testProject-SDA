@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.expandTesting.Login;
 
-public class FluentPanPatternPanTests extends Tests{
+public class FluentPanPatternPanTests extends Tests {
     /**
      * breakout task: 40 minutes
      * - implement fluent POM design, using abstract page class
@@ -15,33 +15,25 @@ public class FluentPanPatternPanTests extends Tests{
      */
 
     @Test
-    public void successLoginTest(){
-        JSONObject dataInfo = (JSONObject) testData.get("PracticeDomeLoginTestData");
-        dataInfo =(JSONObject) dataInfo.get("case1");
-        String actionText = new Login(driver,bot)
-                .goTo()
-                .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
-                .readMassage();
-        Assert.assertEquals(actionText,dataInfo.get("massage"));
+    public void successLoginTest() {
+       loginCase(1);
     }
     @Test
-    public void filedLoginPasswordTest(){
-        JSONObject dataInfo = (JSONObject) testData.get("PracticeDomeLoginTestData");
-        dataInfo =(JSONObject) dataInfo.get("case2");
-        String actionText = new Login(driver,bot)
-                .goTo()
-                .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
-                .readMassage();
-        Assert.assertEquals(actionText,dataInfo.get("massage"));
+    public void filedLoginPasswordTest() {
+        loginCase(2);
     }
     @Test
-    public void filedLoginUserNameTest(){
+    public void filedLoginUserNameTest() {
+        loginCase(3);
+    }
+
+    private void loginCase(int index) {
         JSONObject dataInfo = (JSONObject) testData.get("PracticeDomeLoginTestData");
-        dataInfo =(JSONObject) dataInfo.get("case3");
-        String actionText = new Login(driver,bot)
+        dataInfo = (JSONObject) dataInfo.get("case"+index);
+        String actionText = new Login(driver, bot)
                 .goTo()
                 .login(dataInfo.get("Username").toString(), dataInfo.get("Password").toString())
                 .readMassage();
-        Assert.assertEquals(actionText,dataInfo.get("massage"));
+        Assert.assertEquals(actionText, dataInfo.get("massage"));
     }
 }
