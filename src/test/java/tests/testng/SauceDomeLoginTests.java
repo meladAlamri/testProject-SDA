@@ -4,8 +4,8 @@ import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.inventory.Inventory;
-import pages.login.Login;
+import pages.sauceDemo.Inventory;
+import pages.sauceDemo.Login;
 
 public class SauceDomeLoginTests extends Tests {
     /**
