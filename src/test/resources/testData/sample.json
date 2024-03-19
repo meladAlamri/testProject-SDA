@@ -21,15 +21,18 @@
   "PracticeDomeLoginTestData": {
     "case1": {
       "Username": "practice",
-      "Password": "SuperSecretPassword!"
+      "Password": "SuperSecretPassword!",
+      "massage": "You logged into a secure area!"
     },
     "case2": {
       "Username": "practice",
-      "Password": "SecretPassword!"
+      "Password": "SecretPassword!",
+      "massage": "Your password is invalid!"
     },
     "case3": {
       "Username": "practice!",
-      "Password": "SuperSecretPassword!"
+      "Password": "SuperSecretPassword!",
+      "massage": "Your username is invalid!"
     }
   }
 }
