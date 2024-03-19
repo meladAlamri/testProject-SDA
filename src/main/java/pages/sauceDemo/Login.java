@@ -1,4 +1,4 @@
-package pages.login;
+package pages.sauceDemo;
 
 import engine.ActionBot;
 import io.qameta.allure.Step;
