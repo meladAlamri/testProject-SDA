@@ -24,13 +24,13 @@ public class ActionBot {
 
     }
 
-    @Step
+    @Step ("Navigate to url")
     public void navigate(String url) {
         logger.info("Navigate to: " + url);
         driver.navigate().to(url);
     }
 
-    @Step
+    @Step("Typing a text in an element")
     public void type(By locator, CharSequence text) {
         logger.info("Typing: " + text + " info: " + locator);
         wait.until(f -> {
@@ -40,7 +40,7 @@ public class ActionBot {
         });
     }
 
-    @Step
+    @Step("Get a text")
     public String getText(By locator) {
         AtomicReference<String> actionText = new AtomicReference<>("");
         wait.until(f -> {
@@ -50,7 +50,7 @@ public class ActionBot {
         return actionText.get();
     }
 
-    @Step
+    @Step("Click an element")
     public void click(By locator) {
         logger.info("Clicking: " + locator);
         wait.until(f -> {
