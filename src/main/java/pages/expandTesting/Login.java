@@ -1,6 +1,7 @@
 package pages.expandTesting;
 
 import engine.ActionBot;
+import engine.PropertiesReader;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class Login extends Pages{
 
 
-    private final String url = "https://practice.expandtesting.com/login";
+    private final String url = PropertiesReader.props.getProperty("baseUrl")+"login";
     private final By usernameTextArea = By.id("username");
     private final By passwordTextArea = By.id("password");
     private final By loginButton = By.xpath("//button[contains(@class,'btn-primary')]");
