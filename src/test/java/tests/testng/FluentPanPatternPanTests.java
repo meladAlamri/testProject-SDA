@@ -2,6 +2,8 @@ package tests.testng;
 
 import org.json.simple.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.expandTesting.Login;
 
@@ -14,21 +16,20 @@ public class FluentPanPatternPanTests extends Tests {
      * - generate single allure html file
      */
 
-    @Test
+    @Test(testName = "A successful login")
     public void successLoginTest() {
        loginCase(1);
     }
-    @Test
+    @Test(testName = "A filed login password")
     public void filedLoginPasswordTest() {
         loginCase(2);
     }
-    @Test
+    @Test(testName = "A filed login username")
     public void filedLoginUserNameTest() {
         loginCase(3);
     }
 
     private void loginCase(int index) {
-        JSONObject dataInfo = (JSONObject) testData.get("PracticeDomeLoginTestData");
         dataInfo = (JSONObject) dataInfo.get("case"+index);
         String actionText = new Login(driver, bot)
                 .goTo()
@@ -36,4 +37,10 @@ public class FluentPanPatternPanTests extends Tests {
                 .readMassage();
         Assert.assertEquals(actionText, dataInfo.get("massage"));
     }
+
+    @BeforeMethod
+    public void initialData(){
+        dataInfo = (JSONObject) testData.get("PracticeDomeLoginTestData");
+    }
+
 }
