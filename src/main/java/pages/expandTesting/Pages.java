@@ -4,9 +4,9 @@ import engine.ActionBot;
 import org.openqa.selenium.WebDriver;
 
 public abstract class Pages {
-    WebDriver driver;
+    final WebDriver driver;
 
-     ActionBot bot;
+     final ActionBot bot;
 
     public Pages(WebDriver driver, ActionBot bot){
         this.driver = driver;
