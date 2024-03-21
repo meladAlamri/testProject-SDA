@@ -34,5 +34,12 @@
       "Password": "SuperSecretPassword!",
       "massage": "Your username is invalid!"
     }
+  },
+  "LumaDomeLoginTestData": {
+    "email": "luma1710926450945@gmail.com",
+    "password": "Luma1710926450945",
+    "massage": "Thank you for registering with Main Website Store.",
+    "title": "My Account",
+    "deleteMassage": "You have no items in your shopping cart."
   }
 }
