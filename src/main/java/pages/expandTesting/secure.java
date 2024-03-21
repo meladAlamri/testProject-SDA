@@ -14,11 +14,6 @@ public class secure extends Pages{
         super(driver, bot);
     }
 
-    @Step("Navigate to the Practice Demo secure page")
-    public void goTo(){
-        bot.navigate(url);
-    }
-
     @Step("Reading page massage")
     public String readMassage(){
         return bot.getText(Label);
